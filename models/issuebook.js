@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     userid: DataTypes.INTEGER,
     days_issued: DataTypes.INTEGER,
     issued_date: DataTypes.DATE,
-    is_returnd: DataTypes.ENUM,
+    is_returnd: DataTypes.ENUM('1', '0'),
     returned_date: DataTypes.DATE,
-    status: DataTypes.ENUM
+    status: DataTypes.ENUM('1', '0')
   }, {
     sequelize,
     modelName: 'issuebook',

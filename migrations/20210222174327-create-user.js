@@ -21,11 +21,10 @@ module.exports = {
         allowNull: false,
       },
       gender: {
-        type: Sequelize.ENUM('0', '1'),
-        defaultValue: '1'
+        type: Sequelize.ENUM('male', 'female', "other"),
       },
       adress: {
-        type: Sequelize.TEXT(255),
+        type: Sequelize.TEXT,
         allowNull: false
       },
       status: {
@@ -34,11 +33,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP")
       }
     });
   },
